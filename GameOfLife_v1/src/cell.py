@@ -6,5 +6,5 @@ class Cell:
     def __init__(self, status=ALIVE):
         self.status = status
 
-    def next_stage(self, neighbours):
+    def next_stage(self, live_neighbours):
         self.status = Cell.DIED
