@@ -13,3 +13,6 @@ class Cell:
             self.status = Cell.ALIVE
         else:
             self.status = Cell.DEAD
+
+    def __eq__(self, other):
+        return self.status == other.status

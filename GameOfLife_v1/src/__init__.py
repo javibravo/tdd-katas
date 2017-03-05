@@ -1,1 +1,1 @@
-all = ['cell']
+all = ['cell', 'grid']
