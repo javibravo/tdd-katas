@@ -1,7 +1,7 @@
 from cell import Cell
 
 
-class Grid:
+class Board:
 
     def __init__(self, x, y):
         self.x = x
@@ -9,14 +9,14 @@ class Grid:
         self.grid = [[Cell(Cell.DEAD) for j in range(y)] for i in range(x)]
 
     def evolve(self):
-        evolved_grid = Grid(self.x, self.y)
+        evolved_board = Board(self.x, self.y)
 
         for i in range(self.x):
             for j in range(self.y):
-                evolved_grid.grid[i][j].status = self.grid[i][j].status
-                evolved_grid.grid[i][j].evolve(self.number_of_live_neighbours(i, j))
+                evolved_board.grid[i][j].status = self.grid[i][j].status
+                evolved_board.grid[i][j].evolve(self.number_of_live_neighbours(i, j))
 
-        return evolved_grid
+        return evolved_board
 
     def alive(self, x, y):
         self.grid[x][y].status = Cell.ALIVE
