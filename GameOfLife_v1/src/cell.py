@@ -16,3 +16,9 @@ class Cell:
 
     def __eq__(self, other):
         return self.status == other.status
+
+    def __ne__(self, other):
+        return self.status != other.status
+
+    def __str__(self):
+        return str(self.status)
